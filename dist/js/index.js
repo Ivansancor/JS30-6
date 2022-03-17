@@ -14,7 +14,6 @@ window.onload = function() {
     (searchbar.value="");
 }
 
-
 function filterResults(wordToMatch, array) {
     return array.filter(place => {
         const regex = new RegExp(wordToMatch, "gi");
@@ -23,13 +22,25 @@ function filterResults(wordToMatch, array) {
     );
 }
 
+function numberWithCommas(n) {
+    var parts=n.toString().split(".");
+    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+}
+
 function displayResults(){
     const results = filterResults(this.value, cities);
     const html = results.map(result => {
-        return `<li>${result.city}, ${result.state}</li>`;
+        const regex = new RegExp(this.value, "gi");
+        const cityName = result.city.replace(regex, `<span class="high">${this.value}</span>`);
+        const stateName = result.state.replace(regex, `<span class="high">${this.value}</span>`);
+        return `<li>${cityName}, ${stateName}<span class="pop">${numberWithCommas(result.population)}</span></li>`;
     }
     ).join("");
+    if (this.value === "") {
+        resultBlock.innerHTML = "";
+    } else {
     resultBlock.innerHTML = html;
+    }
 }
 
 searchbar.addEventListener("change", displayResults);
