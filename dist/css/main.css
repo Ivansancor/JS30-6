@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #17638f;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  max-width: 60vw;
+  background-color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.container .searchbar p {
+  color: #17638f;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.container .searchbar span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container .searchbar input[type="text"] {
+  background-color: #17638f;
+  width: 75%;
+  color: white;
+  height: 2rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: 0.2rem solid #17638f;
+  outline-offset: 0.2rem;
+  padding-left: 0.5rem;
+}
+
+.container .searchbar button {
+  background-color: #b2dbf3;
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.2rem;
+  margin-left: 1rem;
+  height: 2.5rem;
+  width: 20%;
+}
+
+.container .results .suggestions {
+  margin-top: 1rem;
+  width: 75%;
+  background-color: #104563;
+}
+
+.container .results .suggestions li {
+  list-style-type: none;
+  padding: 1rem;
+  color: white;
+  font-style: italic;
+  border-bottom: 0.2rem solid white;
+}
+/*# sourceMappingURL=main.css.map */
